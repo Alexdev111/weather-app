@@ -345,13 +345,10 @@ sup {
     position: relative;
     top: -5px;
 }
-
-#icon1 {
-    display: flex;
-    margin-top: 30px;
-    margin-left: 40px;
-    width: 100px;
-    height: 70px;
+#icon-1,#icon-2,#icon-3,#icon-4,#icon-5,#icon-6,#icon-7 {
+    display: block !important;
+    width: 150px !important;
+    height: auto !important;
 }
 
 #umbrella,
@@ -408,9 +405,6 @@ sup {
 .forecast-img {
     display: flex;
     justify-content: center;
-    width: 80px;
-    height: 50px;
-    margin-bottom: 20px;
 }
 
 #max-grade-1,
