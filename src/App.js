@@ -30,7 +30,6 @@ function app() {
             <div id="boss">
             <div className="weather-container">
             <Forecast />
-            {/* LIVE CAMERAS */}
             <div className="block">
                 <div className="container-live-cameras">
                     <h2 className="section-text">Live cameras</h2>
@@ -161,7 +160,7 @@ function app() {
 
 
                         <div id="block-element">
-                        <div className="block-title t2">Weather analyssis</div>
+                        <div className="block-title">Weather analyssis</div>
                             <div className="elements">
                                 <div id="img-block">
                                 <img src={arrow} alt="arrow" id="arrow-icon i3"></img>
@@ -222,7 +221,7 @@ function app() {
 
 
                         <div className="block-element">
-                            <div className="block-title-t3">Awesome Photos</div>
+                            <div className="block-title">Awesome Photos</div>
                                 <div className="main-block-b2">
                                     <div className="aws-photos-block">
                                         <img src={awsome1} alt="awsome-img" id="awsome-photos-image"></img>
@@ -258,11 +257,10 @@ function app() {
             </div>
 
 
-            {/* FOOTHER */}
+            {/* FOOTER */}
 
             <div className="footer-big-block">
                 <div className="footer-main-block">
-                    <div className="footer-elements">
                     <container className="footer-container">
                         <container className="search-container-2">
                     <form method="post" id="form2" className="form-small">
@@ -275,8 +273,8 @@ function app() {
                             <ul>
                                 <li><a href="https://www.facebook.com"><span></span></a></li>
                                 <li><a href="https://www.twitter.com"><span></span></a></li>
-                                <li><a href="app.js"><span></span></a></li>
-                                <li><a href="app.js"><span></span></a></li>
+                                <li><a href="https://www.gmail.com"><span></span></a></li>
+                                <li><a href="https://www.linkedin.com/in/alexandru-gr/"><span></span></a></li>
                             </ul>
                         </div>
                     </container>
@@ -286,7 +284,6 @@ function app() {
                     </div>
                 </div>
                 </div>
-            </div>
         )
     }
 
