@@ -23,9 +23,7 @@ import awsome7 from './images/awsome7.jpg'
 import awsome8 from './images/awsome8.jpg'
 import awsome9 from './images/awsome9.jpg'
 // import awsome10 from '../src/images/awsome10.jpg'
-
 function app() {
-
         return(
             <div id="boss">
             <div className="weather-container">

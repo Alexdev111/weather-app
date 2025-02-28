@@ -4,5 +4,4 @@ import App from "./App"
 import './style.css'
 
 const app = ReactDOMClient.createRoot(document.getElementById("app"))
-
 app.render(<App />)

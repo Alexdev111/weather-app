@@ -336,8 +336,10 @@ function getCoordinates() {
                         <div className="forecast-img">
                             <img alt="day-icon" className="weatherIcon" src={dayIcon}></img>
                         </div>
-                        <div id='max-grade-1'>25°C</div>
-                        <div id="min-grade-1">25°C</div>
+                        <div className="degrees">
+                            <div id='max-grade-1'>25°C</div>
+                            <div id="min-grade-1">25°C</div>
+                        </div>
                 </div>
             </div>
 
@@ -347,8 +349,10 @@ function getCoordinates() {
                         <div className="forecast-img">
                             <img alt="day-icon"  className="weatherIcon" src={dayIcon}></img>
                         </div>
+                    <div className="degrees">
                         <div id='max-grade-2'>25°C</div>
                         <div id="min-grade-2">25°C</div>
+                    </div>
                 </div>
             </div>
     
@@ -358,8 +362,10 @@ function getCoordinates() {
                         <div className="forecast-img">
                             <img alt="day-icon"  className="weatherIcon" src={dayIcon}></img>
                         </div>
-                        <div id='max-grade-3'>25°C</div>
-                        <div id="min-grade-3">25°C</div>
+                        <div className="degrees">
+                            <div id='max-grade-3'>25°C</div>
+                            <div id="min-grade-3">25°C</div>
+                        </div>
                 </div>
             </div>
     
@@ -369,8 +375,10 @@ function getCoordinates() {
                     <div className="forecast-img">
                         <img alt="day-icon"  className="weatherIcon" src={dayIcon}></img>
                     </div>
-                        <div id='max-grade-4'>25°C</div>
-                        <div id="min-grade-4">25°C</div>
+                        <div className="degrees">
+                            <div id='max-grade-4'>25°C</div>
+                            <div id="min-grade-4">25°C</div>
+                        </div>
                 </div>
             </div>
     
@@ -380,8 +388,10 @@ function getCoordinates() {
                     <div className="forecast-img">
                         <img alt="day-icon"  className="weatherIcon" src={dayIcon}></img>
                     </div>
-                        <div id='max-grade-5'>25°C</div>
-                        <div id="min-grade-5">25°C</div>
+                        <div className="degrees">
+                            <div id='max-grade-5'>25°C</div>
+                            <div id="min-grade-5">25°C</div>
+                        </div>
                 </div>
             </div>
     
@@ -391,8 +401,10 @@ function getCoordinates() {
                     <div className="forecast-img">
                         <img alt="day-icon"  className="weatherIcon" src={dayIcon}></img>
                     </div>
-                        <div id='max-grade-6'>25°C</div>
-                        <div id="min-grade-6">25°C</div>
+                        <div className="degrees">
+                            <div id='max-grade-6'>25°C</div>
+                            <div id="min-grade-6">25°C</div>
+                        </div>
                     </div>
                 </div> 
             </div>

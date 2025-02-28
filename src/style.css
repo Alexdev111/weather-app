@@ -69,6 +69,7 @@ body {
 .banner {
     cursor: pointer;
     display: flex;
+    z-index: 1001;
 }
 
 .banner-text {
@@ -148,7 +149,7 @@ body {
 
 .search-container-1 {
     display: flex;
-    justify-content: center; /* Ensure forms are evenly spaced */
+    justify-content: center;
     width: 1140px;
     margin: 0px auto;
     padding: 70px 0px;
@@ -224,14 +225,13 @@ body {
     display: flex;
     padding: 0 15px;
     position: absolute;
-    top: -150px;
+    transform: translateY(-150px)
 }
 
 .table-wrapper {
     display: flex;
     border-radius: 10px;
     overflow: hidden;
-    max-height: 280px;
 }
 
 .today-date {
@@ -696,4 +696,189 @@ ul li:nth-child(3) a span::after {
 ul li:nth-child(4) a span::after {
     background: #0077b5;
     color: #fff;
+}
+
+
+
+/* HAMBURGER MOBILE*/
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+
+@media(max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    /* Stilizare bare hamburger */
+    .bar {
+        display: block;
+        width: 30px;
+        height: 4px;
+        margin: 6px auto;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    /* Efect de transformare la click */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 400px;
+        background-color: #1e202b;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav-bar.active {
+        left: 0;
+    }
+
+    .menu-item {
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+
+
+
+    .nav-elements{
+        width: 100%;
+    }
+    .search-container-1 {
+        width: 100%;
+        justify-content: flex-end !important;
+        padding-top: 160px !important;
+    }
+    .search-container-2 {
+        display: none;
+    }
+    #location-search-large {
+        width: 90%;
+        height: 3.5rem;
+        left: 5%;
+    }
+    #submit-button {
+        margin: auto !important;
+        height: 3.5rem;
+        right: 22%;
+    }
+    .table-wrapper {
+        flex-direction: column;
+    }
+    .forecast {
+        width: 100%;
+    }
+    .forecast-table {
+        position: relative;
+        padding: 0;
+        transform: translateY(-50px) !important;
+    }
+    .forecast-table-wrapper {
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .live-camera-container{
+        /* flex-direction: column;
+         */
+        overflow-y: scroll;
+        width: 400px;
+        margin: 0 auto;
+    }
+    #lc {
+        width: 400px;
+    }
+    .container-live-cameras {
+        width: 100%;
+    }
+    .description-container {
+        width: 100%;
+    }
+    .sections {
+        flex-direction: column;
+    }
+    .main-block {
+        width: 100%;
+    }
+    .main-elements-block {
+        flex-direction: column;
+    }
+    .footer-main-block {
+        width: 100%;
+    }
+    .footer-container {
+        flex-direction: column;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+    #location-search-small {
+        width: auto !important;
+        /* position: initial; */
+    }
+    #submit-small {
+        margin: auto;
+    }
+    .day-card {
+        padding: 10px 20px 10px 20px !important;
+        flex-direction: row;
+        display: flex
+    ;
+        justify-content: center;
+    }
+    .degrees {
+        margin: auto 0;
+    }
+    .block {
+        padding:0 0 70px  0;
+    }
+    .main-block-b2 {
+        justify-content: center;
+    }
+    footer {
+        padding-bottom: 10px;
+    }
+    .hat {
+        display: block;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+    }
+    .menu-item {
+        height: auto;
+        /* margin-right: 15px;
+        padding-top: 3px;
+        margin-top: 4px;
+        margin-bottom: 4px; */
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .banner {
+        padding-left: 20px;
+    }
 }

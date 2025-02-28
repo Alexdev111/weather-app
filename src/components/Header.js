@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from '../images/logo.png'
 
 function Header() {
+    const [menuOpen, setMenuOpen] = useState(false);
     return (
         // Hat
         <container className="hat">
@@ -17,13 +18,18 @@ function Header() {
                     <div className="company-description">Something New</div>
                 </div>
             </div>
-            <container className="nav-bar">
+            <div className={`nav-bar ${menuOpen ? "active" : ""}`}>
                 <div className="menu-item home" >Home</div>
                 <div className="menu-item news" >News</div>
                 <div className="menu-item live-cameras" >Live cameras</div>
                 <div className="menu-item photos" >Photos</div>
                 <div className="menu-item contact" >Contact</div>
-                </container>
+                <div className={`hamburger ${menuOpen ? "active" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                </div>
+                </div>
             </container>    
         </container>
     )
