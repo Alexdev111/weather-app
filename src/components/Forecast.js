@@ -290,7 +290,7 @@ function getCoordinates() {
             <div className="hero">
             <container className="search-container-1">
             <div id="form1" className="form-large">
-                <input type="text" maxLength={50} id="location-search-large" placeholder="Find your location"></input>
+                <input type="text" maxLength={50} id="location-search-large" placeholder="Find your location" autoComplete="off"></input>
                 <button id="submit-button">Find</button>
             </div>
             </container>

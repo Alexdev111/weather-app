@@ -179,10 +179,10 @@ body {
     outline: none;
     border-radius: 100px;
   }
-    #location-search-large:focus {
+    /* #location-search-large:focus {
         border: 3px solid #333645;
         transition: 0.2s border;
-    }
+    } */
   
   #submit-button,
   #submit-small {
@@ -190,11 +190,12 @@ body {
     background-color: #009ad8;
     color: white;
     width: 105px;
-    height: 47px;
+    height: 56px;
     outline: none;
-    margin: 5px 0;
+    /* margin: 5px 0; */
     border-radius: 100px;
     position: relative;
+    font-size: 16px;
 
 
     border: none;
@@ -203,7 +204,7 @@ body {
   }
 
   #submit-button {
-    margin-left: 1030px;
+    margin-left: 1035px;
   }
 
   #submit-small {
@@ -740,10 +741,10 @@ ul li:nth-child(4) a span::after {
     }
     .nav-bar {
         position: fixed;
-        top: 0;
+        top: 20px;
         left: -100%;
         width: 100%;
-        height: 400px;
+        height: 300px;
         background-color: #1e202b;
         display: flex;
         flex-direction: column;
@@ -793,7 +794,8 @@ ul li:nth-child(4) a span::after {
         flex-direction: column;
     }
     .table {
-        width: 350px;
+        width: 90%;
+        margin: 0 auto;
     }
     .today-date {
         width: 100%;
@@ -807,7 +809,8 @@ ul li:nth-child(4) a span::after {
         transform: translateY(-50px) !important;
     }
     .forecast-table-wrapper {
-        justify-content: center;
+        /* justify-content: center; */
+        display: block !important;
         width: 100%;
         height: 100%;
     }
@@ -816,7 +819,7 @@ ul li:nth-child(4) a span::after {
         margin: 0 auto;
     }
     #lc {
-        width: 370px;
+        /* width: 370px; */
     }
     .container-live-cameras {
         width: 100%;
@@ -882,9 +885,17 @@ ul li:nth-child(4) a span::after {
         margin-top: 4px;
         margin-bottom: 4px; */
         margin: 0 !important;
-        padding: 0 !important;
+    }
+    .home {
+        width: auto;
     }
     .banner {
         padding-left: 20px;
     }
+    input:-webkit-autofill {
+        background-color: transparent !important;
+        color: inherit !important;
+        -webkit-box-shadow: 0 0 0px 1000px rgba(0,0,0,0) inset !important;
+    }
+    
 }
