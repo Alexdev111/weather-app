@@ -76,9 +76,9 @@ body {
     color: white;
 }
 
-/* .logo{
-    margin-right: 15px;
-} */
+.logo img{
+    height: 50px;
+}
 
 .company-name {
     font-family: "Roboto", sans-serif;
@@ -93,6 +93,7 @@ body {
 }
 .nav-bar {
     display: flex;
+    align-items: center;
     font-family: "Roboto",'Open Sans', sans-serif;
     font-weight: 300;
     margin-left: auto;
@@ -103,17 +104,11 @@ body {
 
 .menu-item {
     cursor: pointer;
-    border: 2px solid transparent;
-    color: white;
-    height: 31px;
     text-decoration: none;
-    transition: .2s ease;
-
-
+    padding: 2px 10px;
+    font-weight: 400;
     margin-right: 15px;
-    padding-top: 3px;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    border: none;
 }
 
 .menu-item::after {
@@ -123,15 +118,18 @@ body {
     overflow: hidden;
 }
 .menu-item:hover {
+    /* transition: .2s, border-color .2s; */
+    transition: .2s, border ease-in-out;
     text-decoration: none;
     color: #009ad8;
-    border: #009ad8 solid;
+    border:3px solid #009ad8;
+    /* border: #009ad8 solid; */
     border-radius: 20px;
 }
 .home {
     width: 90px;
     color: #009ad8;
-    border: #009ad8 solid;
+    border: 3px #009ad8 solid;
     border-radius: 30px;
 }
 
@@ -471,6 +469,7 @@ body {
 .block-title {
     font-size: 36px;
     margin-bottom: 20px;
+    font-weight: 600;
 }
 .block-elements {
     padding-left: 30px;
@@ -779,17 +778,25 @@ ul li:nth-child(4) a span::after {
         display: none;
     }
     #location-search-large {
-        width: 90%;
+        width: 95%;
         height: 3.5rem;
-        left: 5%;
+        justify-self: anchor-center;
+        font-size: 18px;
     }
     #submit-button {
         margin: auto !important;
         height: 3.5rem;
         right: 22%;
+        font-size: 18px;
     }
     .table-wrapper {
         flex-direction: column;
+    }
+    .table {
+        width: 350px;
+    }
+    .today-date {
+        width: 100%;
     }
     .forecast {
         width: 100%;
@@ -805,17 +812,15 @@ ul li:nth-child(4) a span::after {
         height: 100%;
     }
     .live-camera-container{
-        /* flex-direction: column;
-         */
         overflow-y: scroll;
-        width: 400px;
         margin: 0 auto;
     }
     #lc {
-        width: 400px;
+        width: 370px;
     }
     .container-live-cameras {
         width: 100%;
+        padding: 0 10px !important;
     }
     .description-container {
         width: 100%;
@@ -841,8 +846,9 @@ ul li:nth-child(4) a span::after {
         width: auto !important;
         /* position: initial; */
     }
-    #submit-small {
+    #submit-button {
         margin: auto;
+        right: 10%;
     }
     .day-card {
         padding: 10px 20px 10px 20px !important;
@@ -880,8 +886,5 @@ ul li:nth-child(4) a span::after {
     }
     .banner {
         padding-left: 20px;
-    }
-    .logo img {
-        height: 50px;
     }
 }
