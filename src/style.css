@@ -62,7 +62,7 @@ body {
 
 .hat {
     display: block;
-    padding: 3% 0;
+    padding: 10px 0;
     background-color:#1e202b;
 }
 
@@ -76,9 +76,9 @@ body {
     color: white;
 }
 
-.logo{
+/* .logo{
     margin-right: 15px;
-}
+} */
 
 .company-name {
     font-family: "Roboto", sans-serif;
@@ -880,5 +880,8 @@ ul li:nth-child(4) a span::after {
     }
     .banner {
         padding-left: 20px;
+    }
+    .logo img {
+        height: 50px;
     }
 }

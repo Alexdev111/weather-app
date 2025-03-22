@@ -13,10 +13,10 @@ function Header() {
                         <img src={logo} alt="Logo"></img>
                         </div>
                     </div>
-                <div className="banner-text">
+                {/* <div className="banner-text">
                     <div className="company-name">WeatherNews</div>
                     <div className="company-description">Something New</div>
-                </div>
+                </div> */}
             </div>
             <div className={`nav-bar ${menuOpen ? "active" : ""}`}>
                 <div className="menu-item home" >Home</div>
