@@ -376,9 +376,11 @@ body {
     justify-content: center;
 }
 
-#lc {
+#lc{
     border-radius: 10px;
     margin-bottom: 10px;
+    width: 270px;
+    height: auto;
 }
 
 .icon-container {
@@ -741,7 +743,7 @@ ul li:nth-child(4) a span::after {
     }
     .nav-bar {
         position: fixed;
-        top: 20px;
+        top: 20pxw;
         left: -100%;
         width: 100%;
         height: 300px;
@@ -781,8 +783,8 @@ ul li:nth-child(4) a span::after {
     #location-search-large {
         width: 95%;
         height: 3.5rem;
-        justify-self: anchor-center;
         font-size: 18px;
+        left: 2.5%;
     }
     #submit-button {
         margin: auto !important;
@@ -823,7 +825,7 @@ ul li:nth-child(4) a span::after {
     }
     .container-live-cameras {
         width: 100%;
-        padding: 0 10px !important;
+        padding: 0 15px !important;
     }
     .description-container {
         width: 100%;
@@ -868,9 +870,15 @@ ul li:nth-child(4) a span::after {
     }
     .main-block-b2 {
         justify-content: center;
+        text-align: center;
+        grid-template-columns: repeat(3, 130px);
+        grid-template-rows: auto;
+        gap: 5px;
+        row-gap: 0;
     }
     footer {
-        padding-bottom: 10px;
+        padding: 0px 10px 10px 10px;
+        text-align: center;
     }
     .hat {
         display: block;
@@ -897,5 +905,14 @@ ul li:nth-child(4) a span::after {
         color: inherit !important;
         -webkit-box-shadow: 0 0 0px 1000px rgba(0,0,0,0) inset !important;
     }
-    
+    #awsome-photos-image {
+        /* max-height: 73px; */
+        max-width: 130px;
+    }
+    .big-container {
+        padding: 20px 0;
+    }
+    .description-block {
+        padding: 20px 0;
+    }
 }

@@ -8,10 +8,10 @@ import play_button from './images/icons/play-button@2x.png';
 import arrow from './images/icons/arrow.png';
 
 
-import live_camera_1 from './images/live-camera-1.jpg';
-import live_camera_2 from './images/live-camera-2.jpg';
-import live_camera_3 from './images/live-camera-3.jpg';
-import live_camera_4 from './images/live-camera-4.jpg';
+import budapestCam from './images/budapest.jpg';
+import chicagoCam from './images/chicago.jpg';
+import new_yorkCam from './images/new york.jpg';
+import parisCam from './images/paris.jpg';
 
 import awsome1 from './images/awsome1.jpg'
 import awsome2 from './images/awsome2.jpg'
@@ -35,32 +35,38 @@ function app() {
                     <div className="live-camera-container">
                         <div className="live-camera-block first">
                         <div className="live-camera">
-                            <img id="lc" alt="live-camera" src={live_camera_1}></img>
+                        <a href="https://www.youtube.com/watch?v=rnXIjl_Rzy4" target="_blank" rel="noreferrer">
+                            <img id="lc" className="new-york-camera" alt="live-camera" src={new_yorkCam}></img>
                                 <div className="icon-container">
                                     <img src={play_button} alt="play-button" id="fa"/>
                                 </div>
-                            <div className="live-camera-title">New York</div>
+                        </a>
+                            <div className="live-camera-title">New York, Albany</div>
                             <div className="live-camera-date">{formattedDate2}</div>
                         </div>
                         </div>
 
                         <div className="live-camera-block">
                         <div className="live-camera">
-                            <img id="lc" alt="live-camera" src={live_camera_2}></img>
+                        <a href="https://www.youtube.com/watch?v=4In_qA6dLcg&pp=ygURcGFyaXMgbGl2ZSBjYW1lcmE%3D" target="_blank" rel="noreferrer">
+                            <img id="lc" className="paris-camera" alt="live-camera" src={parisCam}></img>
                                 <div className="icon-container">
                                     <img src={play_button} alt="play-button" id="fa"/>
                                 </div>
-                            <div className="live-camera-title">Los Angeles</div>
+                        </a>
+                            <div className="live-camera-title">Paris, France</div>
                             <div className="live-camera-date">{formattedDate2}</div>
                         </div>
                         </div>
 
                         <div className="live-camera-block">
                         <div className="live-camera">
-                            <img id="lc" alt="live-camera" src={live_camera_3}></img>
+                            <a href="https://www.youtube.com/watch?v=sQxL8t0gtu8" target="_blank" rel="noreferrer">
+                            <img id="lc" className="chicago-camera" alt="live-camera" src={chicagoCam}></img>
                                 <div className="icon-container">
                                     <img src={play_button} alt="play-button" id="fa"/>
                                 </div>
+                            </a>
                             <div className="live-camera-title">Chicago</div>
                             <div className="live-camera-date">{formattedDate2}</div>
                         </div>
@@ -68,11 +74,13 @@ function app() {
 
                         <div className="live-camera-block">
                         <div className="live-camera">
-                            <img id="lc" alt="live-camera" src={live_camera_4}></img>
+                            <a href="https://www.earthcam.com/world/hungary/budapest/?cam=hotelvictoria" target="_blank" rel="noreferrer">
+                            <img id="lc" className="budapest-camera" alt="live-camera" src={budapestCam}></img>
                                 <div className="icon-container">
                                     <img src={play_button} alt="play-button" id="fa"/>
                                 </div>
-                            <div className="live-camera-title">London</div>
+                            </a>
+                            <div className="live-camera-title">Budapest, Hungary</div>
                             <div className="live-camera-date">{formattedDate2}</div>
                         </div>
                         </div>
@@ -86,41 +94,43 @@ function app() {
                 <div className="sections">
                         <div className="desc-date">06.10</div>
                         <div className="description">
-                        <div className="desc-title">Doloremque laudantium totam sequi</div>
+                        <div className="desc-title">Discover Stunning Landscapes</div>
                         <div className="desc-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Illo saepe assumenda dolorem modi, expedita voluptatum
-                        ducimus necessitatibus. Asperiores quod reprehenderit
-                        necessitatibus harum, mollitia, odit et consequatur
-                        maxime nisi amet doloremque.
+                        The world is full of breathtaking places, and thanks to live cameras,
+                        you can explore them from the comfort of your home. Whether it’s the towering peaks of the Alps,
+                        the serene beaches of the Maldives, or the rolling countryside of Tuscany,
+                        live streaming technology allows you to experience stunning landscapes in real time.
+                        See how nature changes through the seasons, witness spectacular sunsets,
+                        and immerse yourself in the beauty of distant places with just a click.
                         </div>
-                        <img src={arrow} alt="icon" id="arrow-icon"></img>
+                        {/* <img src={arrow} alt="icon" id="arrow-icon"></img> */}
                         </div>
 
 
                         <div className="desc-date">06.10</div>
                         <div className="description">
-                        <div className="desc-title">Doloremque laudantium totam sequi</div>
+                        <div className="desc-title">The Technology Behind Live Streaming</div>
                         <div className="desc-text">
-                        Nobis architecto consequatur ab, ea, eum autem aperiam
-                        accusantium placeat vitae facere explicabo temporibus
-                        minus distinctio cum optio quis, dignissimos eius
-                        aspernatur fuga. Praesentium totam, corrupti beatae
-                        amet expedita veritatis.
+                        Have you ever wondered how live cameras deliver high-quality footage in real-time?
+                        Streaming technology has evolved significantly, allowing cameras to broadcast 24/7
+                        with minimal latency. From high-definition lenses and advanced encoding techniques
+                        to AI-powered motion detection, live streaming has become an essential tool for tourism,
+                        security, and entertainment. Learn how these technologies work and how they bring the world closer to you.
                         </div>
-                        <img src={arrow} alt="icon" id="arrow-icon"></img>
+                        {/* <img src={arrow} alt="icon" id="arrow-icon"></img> */}
                         </div>
 
                         <div className="desc-date">06.10</div>
                         <div className="description">
-                        <div className="desc-title">Doloremque laudantium totam sequi</div>
+                        <div className="desc-title">Urban Exploration Through Live Cameras</div>
                         <div className="desc-text">
-                        Enim impedit officiis placeat qui recusandae doloremque possimus,
-                        iusto blanditiis, quam optio delectus maiores. Possimus rerum,
-                        velit cum natus eos. Cumque pariatur beatae asperiores,
-                        esse libero quas ad dolorem. Voluptates.
+                        Cities are constantly evolving, and live cameras provide a unique way to witness these changes in real time.
+                        Whether it’s the bustling streets of New York, the charming alleys of Paris,
+                        or the vibrant nightlife of Tokyo, urban exploration has never been easier.
+                        See how people go about their daily lives, watch major events unfold,
+                        and experience the heartbeat of the world’s most iconic cities from your screen.
                         </div>
-                        <img src={arrow} alt="icon" id="arrow-icon"></img>
+                        {/* <img src={arrow} alt="icon" id="arrow-icon"></img> */}
                         </div>
 
                     </div>
@@ -137,22 +147,22 @@ function app() {
                                     <img src={arrow} alt="arrow" id="arrow-icon i2"></img>
                                 </div>
                             <div className="block-elements">
-                                <div className="text-header">Natus error sit voluptatem accusantium</div>
-                                <div className="text-info">Doloremque laudantium totam rem aperiam Inventore veritatis et quasi architecto beatae vitae.</div>
+                                <div className="text-header">Real-Time Weather Updates</div>
+                                <div className="text-info">Stay informed with instant weather updates for your location. Get alerts about temperature changes, storms, and other important climate conditions.</div>
                             </div>
                                 <div className="img-block">
                                     <img src={arrow} alt="arrow" id="arrow-icon i2"></img>
                                 </div>
                             <div className="block-elements">
-                                <div className="text-header">Natus error sit voluptatem accusantium</div>
-                                <div className="text-info">Doloremque laudantium totam rem aperiam Inventore veritatis et quasi architecto beatae vitae.</div>
+                                <div className="text-header">Interactive Weather Maps</div>
+                                <div className="text-info">Explore dynamic weather maps with real-time satellite imagery, storm tracking, and radar data to monitor global weather patterns.</div>
                             </div>
                                 <div className="img-block">
                                     <img src={arrow} alt="arrow" id="arrow-icon i2"></img>
                                 </div>
                             <div className="block-elements">
-                                <div className="text-header">Natus error sit voluptatem accusantium</div>
-                                <div className="text-info">Doloremque laudantium totam rem aperiam Inventore veritatis et quasi architecto beatae vitae.</div>
+                                <div className="text-header">Customizable Notifications</div>
+                                <div className="text-info">Set up personalized weather alerts for rain, snow, or extreme conditions to stay prepared no matter where you are.</div>
                             </div>
                         </div>
 
@@ -164,7 +174,7 @@ function app() {
                                 <img src={arrow} alt="arrow" id="arrow-icon i3"></img>
                                 </div>
                                 <div className="element">
-                                    <div className="element-text">Accusantium doloremque laudantium rem aperiam</div>
+                                    <div className="element-text">Detailed forecasts with high accuracy for the next 7 days.</div>
                                     <div className="hr"></div>
                                 </div>
 
@@ -172,7 +182,7 @@ function app() {
                                 <img src={arrow} alt="arrow" id="arrow-icon i3"></img>
                                 </div>
                                 <div className="element">
-                                    <div className="element-text">Eaque ipsa quae ab illo inventore veritatis quasi</div>
+                                    <div className="element-text">Climate insights, including humidity, wind speed, and UV index.</div>
                                     <div className="hr"></div>
                                 </div>
                                 
@@ -180,7 +190,7 @@ function app() {
                                 <img src={arrow} alt="arrow" id="arrow-icon i3"></img>
                                 </div>
                                 <div className="element">
-                                    <div className="element-text">Architecto beatae vitae dicta sunt explicabo</div>
+                                    <div className="element-text">Reports on seasonal trends and extreme weather patterns.</div>
                                     <div className="hr"></div>
                                 </div>
 
@@ -188,7 +198,7 @@ function app() {
                                 <img src={arrow} alt="arrow" id="arrow-icon i3"></img>
                                 </div>
                                 <div className="element">
-                                    <div className="element-text">Nemo enim ipsam voluptatem quia voluptas</div>
+                                    <div className="element-text">Humidity monitoring to help you plan outdoor activities.</div>
                                     <div className="hr"></div>
                                 </div>
 
@@ -196,7 +206,7 @@ function app() {
                                 <img src={arrow} alt="arrow" id="arrow-icon i3"></img>
                                 </div>
                                 <div className="element">
-                                    <div className="element-text">Aspernatur aut odit aut fugit, sed quia consequuntur</div>
+                                    <div className="element-text">Oceanic and atmospheric conditions for sailing and aviation.</div>
                                     <div className="hr"></div>
                                 </div>
 
@@ -204,7 +214,7 @@ function app() {
                                 <img src={arrow} alt="arrow" id="arrow-icon i3"></img>
                                 </div>
                                 <div className="element">
-                                    <div className="element-text">Magni dolores eos qui ratione voluptatem sequi</div>
+                                    <div className="element-text">Global climate change insights and environmental impact reports.</div>
                                     <div className="hr"></div>
                                 </div>
 
@@ -212,7 +222,7 @@ function app() {
                                 <img src={arrow} alt="arrow" id="arrow-icon i3"></img>
                                 </div>
                                 <div className="element">
-                                    <div className="element-text">Neque porro quisquam est qui dolorem ipsum quia</div>
+                                    <div className="element-text">Search your city or country and get weather information.</div>
                                 </div>
                                 </div>
                         </div>
@@ -253,8 +263,7 @@ function app() {
                     </div>
                 </div>
             </div>
-
-
+           
             {/* FOOTER */}
 
             <div className="footer-big-block">
@@ -277,7 +286,7 @@ function app() {
                         </div>
                     </container>
 
-                    <footer>WeatherNews {formattedDate3}. Developed by Alex Gurgurov. All rights reserved</footer>
+                    <footer>© WeatherNews {formattedDate3}. Developed by Alex Gurgurov. All rights reserved</footer>
                     </div>
                     </div>
                 </div>
