@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import logo from '../images/logo.png'
+// import $ from "jquery"
+
+
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);

@@ -1,7 +1,8 @@
 // methods: GET, POST DELETE, PUT
 // status: 200, 500, 404
 
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Loader from "./components/Loader.js";
 // import axios from "axios";
 import Forecast, { formattedDate2, formattedDate3 } from "./components/Forecast";
 import play_button from './images/icons/play-button@2x.png';
@@ -23,9 +24,18 @@ import awsome7 from './images/awsome7.jpg'
 import awsome8 from './images/awsome8.jpg'
 import awsome9 from './images/awsome9.jpg'
 // import awsome10 from '../src/images/awsome10.jpg'
-function app() {
+function App() {
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
+      }, []);
         return(
             <div id="boss">
+                <div>
+                {loading ? <Loader /> : null}
+                </div>
             <div className="weather-container">
             <Forecast />
             <div className="block">
@@ -295,4 +305,4 @@ function app() {
     }
 
 
-export default app
+export default App

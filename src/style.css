@@ -154,7 +154,6 @@ body {
   }
   .search-container-2 {
     display: flex;
-    margin: 0px auto;
   }
 
   #location-search-large {
@@ -167,7 +166,6 @@ body {
   
   #location-search-large,
   #location-search-small {
-    display: flex;
     color: white;
     font-family: "Roboto", inherit;
     font-weight: 500;
@@ -553,6 +551,28 @@ body {
     cursor: pointer;
 
 }
+#form2, .form-small {
+    position: relative;
+}
+#submit-small {
+    position: absolute;
+    right: 0;
+}
+#location-search-small {
+    position: relative;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    background-color: #1e202b !important;
+    color: white !important;
+    box-shadow: 0 0 0px 1000px #1e202b inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
 
 
 /* FOOTER */
@@ -575,7 +595,7 @@ body {
 
 .footer-container {
     display: flex;
-    padding-top: 60px;
+    padding: 60px 0;
 }
 footer {
     font-family: "Roboto",'Open Sans', sans-serif;
@@ -583,6 +603,7 @@ footer {
     display: flex;
     justify-content: center;
     /* margin: 40px 0px; */
+    padding-bottom: 10px;
 }
 
 .social-media {
@@ -708,7 +729,6 @@ ul li:nth-child(4) a span::after {
     cursor: pointer;
 }
 
-
 @media(max-width: 768px) {
     .hamburger {
         display: block;
@@ -743,7 +763,7 @@ ul li:nth-child(4) a span::after {
     }
     .nav-bar {
         position: fixed;
-        top: 20pxw;
+        top: 20px;
         left: -100%;
         width: 100%;
         height: 300px;
@@ -820,9 +840,6 @@ ul li:nth-child(4) a span::after {
         overflow-y: scroll;
         margin: 0 auto;
     }
-    #lc {
-        /* width: 370px; */
-    }
     .container-live-cameras {
         width: 100%;
         padding: 0 15px !important;
@@ -871,13 +888,13 @@ ul li:nth-child(4) a span::after {
     .main-block-b2 {
         justify-content: center;
         text-align: center;
-        grid-template-columns: repeat(3, 130px);
+        grid-template-columns: repeat(3, 115px);
         grid-template-rows: auto;
         gap: 5px;
         row-gap: 0;
     }
     footer {
-        padding: 0px 10px 10px 10px;
+        padding: 10px;
         text-align: center;
     }
     .hat {
@@ -907,7 +924,7 @@ ul li:nth-child(4) a span::after {
     }
     #awsome-photos-image {
         /* max-height: 73px; */
-        max-width: 130px;
+        max-width: 115px;
     }
     .big-container {
         padding: 20px 0;
