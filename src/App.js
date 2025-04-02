@@ -7,6 +7,7 @@ import Loader from "./components/Loader.js";
 import Forecast, { formattedDate2, formattedDate3 } from "./components/Forecast";
 import play_button from './images/icons/play-button@2x.png';
 import arrow from './images/icons/arrow.png';
+import logo from './images/logo.png'
 
 
 import budapestCam from './images/budapest.jpg';
@@ -279,13 +280,15 @@ function App() {
             <div className="footer-big-block">
                 <div className="footer-main-block">
                     <container className="footer-container">
-                        <container className="search-container-2">
-                    <form method="post" id="form2" className="form-small">
-                        <input type="search" maxLength={15} id="location-search-small" placeholder="Find your location"></input>
-                        <input type="submit" value={'Find'} id="submit-small"></input>
-                    </form>
-                </container>
-
+                <div className="footer-el-logo">
+                    <img src={logo} alt='WeatherNews' className='footer-logo-img'></img>
+                </div>
+                        <div className="footer-el-description">
+                        <strong>WeatherNews</strong> is an updated app with new technologies that helps you manage your plans by showing you the precipitation expected in the coming days with high accuracy and a very low error percentage. 
+                        <p style={{color:'#ff7d00'}}>
+                        ⎯⎯ ୨ <strong style={{color:'#ff7d00'}}>Stay on trend ━━━ Be the trend </strong>୧ ⎯⎯
+                        </p>
+                        </div>
                         <div className="social-media">
                             <ul>
                                 <li><a href="https://www.facebook.com"><span></span></a></li>
@@ -296,7 +299,7 @@ function App() {
                         </div>
                     </container>
 
-                    <footer>© WeatherNews {formattedDate3}. Developed by Alex Gurgurov. All rights reserved</footer>
+                    <footer>© WeatherNews {formattedDate3}. Developed by Alexandru Gurgurov. All rights reserved</footer>
                     </div>
                     </div>
                 </div>

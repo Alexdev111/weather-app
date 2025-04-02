@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #F5F5DC;
+    font-family:"Mulish", sans-serif;;
 }
 
 body {
@@ -16,44 +19,6 @@ body {
     background: #1e202b;
     /* background-color: #bfc1c8; */
 }
-
-@media (max-width: 1350px) {
-    /* .hat {
-        display: flex;
-        justify-content: center;
-        margin-left: 35px;
-        max-width: 95%;
-    } */
-}
-
-@media (max-width: 1230px) {
-    /* .hat {
-        margin-left: 45px;
-    }
-     */
-}
-@media (max-width: 1170px) {
-    /* html:not(.hero) {
-        margin-left: 150px;
-    } */
-}
-@media (max-width: 600px) {
-    
-}
-@media (max-width: 300px) {
-    
-}
-
-
-
-
-
-
-
-
-
-
-
 #boss {
     box-sizing: border-box;
     width: 100%;
@@ -188,7 +153,7 @@ body {
     background-color: #009ad8;
     color: white;
     width: 105px;
-    height: 56px;
+    height: 59px;
     outline: none;
     /* margin: 5px 0; */
     border-radius: 100px;
@@ -439,6 +404,7 @@ body {
     color: #009ad8;
 }
 .desc-title {
+    font-size: 16px;
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -594,8 +560,10 @@ input:-webkit-autofill:active {
 }
 
 .footer-container {
-    display: flex;
-    padding: 60px 0;
+    display: block;
+    /* padding: 50px 0; */
+    padding-top: 50px;
+    place-items: center;
 }
 footer {
     font-family: "Roboto",'Open Sans', sans-serif;
@@ -607,9 +575,20 @@ footer {
 }
 
 .social-media {
-    margin: 0 auto;
-    padding-top: 8.5px
+    padding: 25px 0;
+    justify-self: center;
 }
+
+.footer-logo-img {
+    height: 50px;
+}
+.footer-el-description {
+    text-align: center;
+    width: 400px;
+    padding-top: 20px
+}
+
+
 
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 ul {
