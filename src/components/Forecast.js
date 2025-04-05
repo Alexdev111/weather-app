@@ -6,6 +6,7 @@ import Header from "./Header";
 import CompassIcon from '../images/compass-icon.png';
 import dayIcon from '../images/icons/simple/day.svg';
 import WIndIcon from '../images/wind-icon.png'; 
+import notFoundImg from '../images/not-found.jpg'
 
 // ICONS IMPORT
 import sunnyDayIcon from '../images/icons/simple/sunny-day.svg';
@@ -123,11 +124,9 @@ function getWeatherIcon(id) {
                     humidityElement.textContent = humidity + '%'
 
                     const currentWeatherSummaryImg = document.querySelector('.curentWeatherIcon')
-                    // const currentWeatherSummaryFutureImg = document.querySelectorAll('.weatherIcon')
                     const id = info.weather_code;
                     getWeatherIcon(id)      
                     currentWeatherSummaryImg.src = getWeatherIcon(id)
-                    // currentWeatherSummaryFutureImg.src = getWeatherIcon(id)
                 
 
                 function getWindDirections(degrees) {
@@ -146,9 +145,62 @@ function getCoordinates() {
     fetch(urlC)
         .then(response => response.json())
         .then(data => {
-            console.log('Coordinates Data:', data); // Log coordinates data
+            console.log('Coordinates Data:', data);
             if (data.length > 0) {
-                const location = data[0]; // First result from the API
+                incorrectCity();
+                const recoverData = document.getElementsByClassName('forecast');
+                for(let z = 0; z < recoverData.length; z++) {
+                    // recoverData[z].add();
+                    recoverData[z].style.display = 'block';
+                }
+                const notFoundImageAfter = document.querySelectorAll('.notFoundImage');
+                if (notFoundImageAfter.length > 0) {
+                    notFoundImageAfter.forEach((el) => {
+                        el.remove();
+                    });
+                    console.log('Toate imaginile au fost eliminate.');
+                } else { console.error('ERROR IMAGE')}
+    
+                const forecastInfoAfter = document.querySelector('.forecast-info');
+                forecastInfoAfter.style.display = 'block';
+                
+
+                let todayDate = document.querySelector('.today-date');
+                todayDate.classList.remove('todayDateInTheRoad');
+
+            } else if(data.length <= 0 || cityName.value === undefined) {
+                console.error("Wrong city name!");
+                const elQwerty = document.getElementsByClassName('forecast');
+                for(let t = 0; t < elQwerty.length; t++) {
+                    elQwerty[t].style.display = 'none';
+                    // elQwerty[t].forEach((el) => {
+                    //     el.remove();
+                    // });
+                }
+                const forecastInfoBefore = document.querySelector('.forecast-info');
+                forecastInfoBefore.style.display = 'none'
+
+
+                let todayDate = document.querySelector('.today-date');
+                todayDate.classList.add('todayDateInTheRoad');
+                const insertAfterIt = document.querySelector('.today-date');
+                if(insertAfterIt) {
+
+                    const isHeExist = document.querySelector('.notFoundImage') 
+                    if (!isHeExist) {
+                        const notFoundImage = document.createElement('img');
+                        notFoundImage.classList.add('notFoundImage')
+                        notFoundImage.src = notFoundImg;
+                        notFoundImage.alt = '404';
+                        insertAfterIt.insertAdjacentElement('afterend', notFoundImage)
+                    }
+                }
+            } else {
+                console.error('404 ERROR!');
+            }
+
+        function incorrectCity(){
+            const location = data[0]; 
                 console.log(`${cityName} ==> Latitude: ${location.lat}, Longitude: ${location.lon}`);
 
                 let cityElement = document.querySelector('.city');
@@ -214,7 +266,6 @@ function getCoordinates() {
                             }
                         });
 
-                        // Display max/min temperatures for each day
                         const maxTemp = (dayIndex) => Math.round(json.daily.apparent_temperature_max[dayIndex]) + '°C';
                         const minTemp = (dayIndex) => Math.round(json.daily.apparent_temperature_min[dayIndex]) + '°C';
 
@@ -237,7 +288,7 @@ function getCoordinates() {
                         document.getElementById("min-grade-6").textContent = minTemp(6);
                     })
                     .catch(error => console.error("Something went wrong with the forecast table data: ", error));
-            }
+        }
         })
         .catch(error => {
             console.error("Error fetching coordinates: ", error);
@@ -288,12 +339,12 @@ function getCoordinates() {
             <div>
             <Header />
             <div className="hero">
-            <container className="search-container-1">
+            <div className="search-container-1">
             <div id="form1" className="form-large">
                 <input type="text" maxLength={50} id="location-search-large" placeholder="Find your location" autoComplete="off"></input>
                 <button id="submit-button">Find</button>
             </div>
-            </container>
+            </div>
             </div>
             <div className="forecast-table-wrapper">
             <div className='forecast-table'>
@@ -334,7 +385,7 @@ function getCoordinates() {
                 <div className="day" style={{backgroundColor: '#222530'}}>{week[(currentDayIndex + 1) % 7]}</div>
                 <div className="day-card">
                         <div className="forecast-img">
-                            <img alt="day-icon" className="weatherIcon" src={dayIcon}></img>
+                            <img alt="day-icon" className="weatherIcon" src={dayIcon} style={{"width":"100px"}}></img>
                         </div>
                         <div className="degrees">
                             <div id='max-grade-1'>25°C</div>
@@ -347,7 +398,7 @@ function getCoordinates() {
                 <div className="day" style={{backgroundColor: '#2d303d'}}>{week[(currentDayIndex + 2) % 7]}</div>
                 <div className="day-card">
                         <div className="forecast-img">
-                            <img alt="day-icon"  className="weatherIcon" src={dayIcon}></img>
+                            <img alt="day-icon"  className="weatherIcon" src={dayIcon} style={{"width":"100px"}}></img>
                         </div>
                     <div className="degrees">
                         <div id='max-grade-2'>25°C</div>
@@ -360,7 +411,7 @@ function getCoordinates() {
                 <div className="day" style={{backgroundColor: '#222530'}}>{week[(currentDayIndex + 3) % 7]}</div>
                 <div className="day-card">
                         <div className="forecast-img">
-                            <img alt="day-icon"  className="weatherIcon" src={dayIcon}></img>
+                            <img alt="day-icon"  className="weatherIcon" src={dayIcon} style={{"width":"100px"}}></img>
                         </div>
                         <div className="degrees">
                             <div id='max-grade-3'>25°C</div>
@@ -373,7 +424,7 @@ function getCoordinates() {
                 <div className="day" style={{backgroundColor: '#2d303d'}}>{week[(currentDayIndex + 4) % 7]}</div>
                 <div className="day-card">
                     <div className="forecast-img">
-                        <img alt="day-icon"  className="weatherIcon" src={dayIcon}></img>
+                        <img alt="day-icon"  className="weatherIcon" src={dayIcon} style={{"width":"100px"}}></img>
                     </div>
                         <div className="degrees">
                             <div id='max-grade-4'>25°C</div>
@@ -386,7 +437,7 @@ function getCoordinates() {
                 <div className="day" style={{backgroundColor: '#222530'}}>{week[(currentDayIndex + 5) % 7]}</div>
                 <div className="day-card">
                     <div className="forecast-img">
-                        <img alt="day-icon"  className="weatherIcon" src={dayIcon}></img>
+                        <img alt="day-icon"  className="weatherIcon" src={dayIcon} style={{"width":"100px"}}></img>
                     </div>
                         <div className="degrees">
                             <div id='max-grade-5'>25°C</div>
@@ -399,7 +450,7 @@ function getCoordinates() {
                 <div className="day" style={{backgroundColor: '#2d303d'}}>{week[(currentDayIndex + 6) % 7]}</div>
                 <div className="day-card">
                     <div className="forecast-img">
-                        <img alt="day-icon"  className="weatherIcon" src={dayIcon}></img>
+                        <img alt="day-icon"  className="weatherIcon" src={dayIcon} style={{"width":"100px"}}></img>
                     </div>
                         <div className="degrees">
                             <div id='max-grade-6'>25°C</div>

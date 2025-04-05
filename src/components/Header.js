@@ -8,13 +8,15 @@ function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
         // Hat
-        <container className="hat">
-            <container className="nav-elements">
+        <div className="hat">
+            <div className="nav-elements">
                 <div className="banner" >
                     <div className="logo">
-                        <div className="logo-company" >
-                        <img src={logo} alt="Logo"></img>
-                        </div>
+                        <a href="/">
+                            <div className="logo-company" >
+                            <img src={logo} alt="Logo"></img>
+                            </div>
+                        </a>
                     </div>
                 {/* <div className="banner-text">
                     <div className="company-name">WeatherNews</div>
@@ -33,8 +35,8 @@ function Header() {
                     <span className="bar"></span>
                 </div>
                 </div>
-            </container>    
-        </container>
+            </div>    
+        </div>
     )
 }
 

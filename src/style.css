@@ -180,7 +180,6 @@ body {
     position: relative;
     width: 1170px;
     margin: 0 auto;
-    letter-spacing: .8px;
     height: 150px;
 }
 .forecast-table {
@@ -227,11 +226,14 @@ body {
 }
 .weatherIcon {
     display: block;
-    width: 80px !important;
+    width: 100px !important;
     height: auto;
 }
 .curentWeatherIcon {
     display: block;
+    height: 200px;
+    position: absolute;
+    top: 60px;
 }
 .curent-icon-block {
     display: flex;
@@ -799,7 +801,7 @@ ul li:nth-child(4) a span::after {
         margin: 0 auto;
     }
     .today-date {
-        width: 100%;
+        width: 100% !important;
     }
     .forecast {
         width: 100%;
@@ -884,17 +886,14 @@ ul li:nth-child(4) a span::after {
     }
     .menu-item {
         height: auto;
-        /* margin-right: 15px;
-        padding-top: 3px;
-        margin-top: 4px;
-        margin-bottom: 4px; */
         margin: 0 !important;
+        margin-bottom: 2px !important;
     }
     .home {
         width: auto;
     }
     .banner {
-        padding-left: 20px;
+        padding-left: 10px;
     }
     input:-webkit-autofill {
         background-color: transparent !important;
@@ -911,4 +910,22 @@ ul li:nth-child(4) a span::after {
     .description-block {
         padding: 20px 0;
     }
+    .notFoundImage {
+        width: 100% !important;
+    }
+    .curentWeatherIcon {
+        display: block;
+        height: 170px;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+    }
 }
+.notFoundImage {
+    width: 1140px;
+    height: 300px;
+    border-radius: 0 0 10px 10px;
+}
+.todayDateInTheRoad {
+    width: 100%;
+} 

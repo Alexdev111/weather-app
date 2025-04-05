@@ -52,7 +52,7 @@ function App() {
                                     <img src={play_button} alt="play-button" id="fa"/>
                                 </div>
                         </a>
-                            <div className="live-camera-title">New York, Albany</div>
+                            <div className="live-camera-title">New York City</div>
                             <div className="live-camera-date">{formattedDate2}</div>
                         </div>
                         </div>
@@ -279,7 +279,7 @@ function App() {
 
             <div className="footer-big-block">
                 <div className="footer-main-block">
-                    <container className="footer-container">
+                    <div className="footer-container">
                 <div className="footer-el-logo">
                     <img src={logo} alt='WeatherNews' className='footer-logo-img'></img>
                 </div>
@@ -297,7 +297,7 @@ function App() {
                                 <li><a href="https://www.linkedin.com/in/alexandru-gr/"><span></span></a></li>
                             </ul>
                         </div>
-                    </container>
+                    </div>
 
                     <footer>© WeatherNews {formattedDate3}. Developed by Alexandru Gurgurov. All rights reserved</footer>
                     </div>
