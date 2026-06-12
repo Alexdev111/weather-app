@@ -21,8 +21,6 @@ import snowy6Icon from '../images/icons/simple/snowy-6.svg';
 import rainAndSleetMixIcon from '../images/icons/simple/rain-and-sleet-mix.svg';
 import thunderIcon from '../images/icons/simple/thunder.svg';
 
-
-
 const monthNames = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
@@ -59,8 +57,9 @@ function getWeatherIcon(id) {
     if([75,77,85,86].includes(id)) return snowy6Icon;
     if(id === 82) return rainAndSleetMixIcon;
     if([95,96,99].includes(id)) return thunderIcon;
-}    
-    function Forecast() {
+}
+    
+    function Forecast({ onDataLoaded }) {
             function newFunc() {
                 let newApi = `https://api.openweathermap.org/geo/1.0/direct?q=Chisinau&limit=5&appid=${API_KEY}`
                 fetch(newApi)
@@ -84,12 +83,13 @@ function getWeatherIcon(id) {
                     .then(response => response.json())
                     .then(info => {
                         renderWeather(info.current);
-                        // renderWeatherCurrently(info.current);
                         renderWeatherDaily(info.daily);
                         console.log(info);
+                        if (onDataLoaded) onDataLoaded(); // <-- signal completion here
                     })
                     .catch(error => {
                         console.error("Error fetching weather data:", error);
+                        if (onDataLoaded) onDataLoaded(); // also hide loader on error
                     });
                     newFunc();
                     return () => {
@@ -137,6 +137,7 @@ function getWeatherIcon(id) {
                 const windDirectElement = document.getElementById('compass-direction')
                 windDirectElement.textContent = getWindDirections(info.wind_direction_10m)
             }
+        
 //  ------------------------------SEARCH FETCH-----------------------------------------
 function getCoordinates() {
     let cityName = document.getElementById('location-search-large').value;
