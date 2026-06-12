@@ -35,7 +35,7 @@ function App() {
       {loading && <Loader />}
       <div className="weather-container" style={{ display: loading ? 'none' : 'block' }}>
         <Forecast onDataLoaded={handleDataLoaded} />
-        <div className="block">
+        <div className="block" id="live-cameras">
           <div className="container-live-cameras">
             <h2 className="section-text">Live cameras</h2>
 

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import logo from '../images/logo.png'
 // import $ from "jquery"
 
-
-
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
@@ -18,22 +16,19 @@ function Header() {
                             </div>
                         </a>
                     </div>
-                {/* <div className="banner-text">
-                    <div className="company-name">WeatherNews</div>
-                    <div className="company-description">Something New</div>
-                </div> */}
             </div>
-            <div className={`nav-bar ${menuOpen ? "active" : ""}`}>
-                <div className="menu-item home" >Home</div>
-                <div className="menu-item news" >News</div>
-                <div className="menu-item live-cameras" >Live cameras</div>
-                <div className="menu-item photos" >Photos</div>
-                <div className="menu-item contact" >Contact</div>
-                <div className={`hamburger ${menuOpen ? "active" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                </div>
+                <div className={`nav-bar ${menuOpen ? "active" : ""}`}>
+                    <a href="/" className="menu-item home">HOME</a>
+                    <a href="/news" className="menu-item news">NEWS</a> {/* Add href */}
+                    <a href="#live-cameras" className="menu-item live-cameras">LIVE CAMERAS</a>
+                    <a href="/photos" className="menu-item photos">PHOTOS</a> {/* Add href */}
+                    <a href="/contact" className="menu-item contact">CONTACT</a> {/* Add href */}
+                    
+                    <div className={`hamburger ${menuOpen ? "active" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                    </div>
                 </div>
             </div>    
         </div>

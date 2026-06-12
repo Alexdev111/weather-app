@@ -66,38 +66,47 @@ body {
     color: #fff;
 }
 
-
 .menu-item {
     cursor: pointer;
     text-decoration: none;
-    padding: 2px 10px;
+    padding: 10px 20px;
     font-weight: 400;
     margin-right: 15px;
     border: none;
+    position: relative;
+    color: #fff;
+    transition: 0.5s;
+    z-index: 1;
 }
 
+.menu-item::before,
 .menu-item::after {
-    content: " ";
-    clear: both;
-    display:block;
-    overflow: hidden;
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
 }
-.menu-item:hover {
-    /* transition: .2s, border-color .2s; */
-    transition: .2s, border ease-in-out;
-    text-decoration: none;
-    color: #009ad8;
-    border:3px solid #009ad8;
-    /* border: #009ad8 solid; */
-    border-radius: 20px;
+.menu-item::before {
+    top: 0;
+    border-top: 2px solid #009ad8;
+    border-bottom: 2px solid #009ad8;
+    transform: scaleY(2);
+    opacity: 0;
 }
-.home {
-    width: 90px;
-    color: #009ad8;
-    border: 3px #009ad8 solid;
-    border-radius: 30px;
+.menu-item::after {
+    color: #fff;
+}
+.menu-item:hover::before {
+    transform: scaleY(1);
+    opacity: 1;
 }
 
+.menu-item:hover::after {
+    transform: scaleY(1);
+    opacity: 1;
+}
 .nav-elements {
     display: flex;
     margin: 0px auto;
@@ -122,11 +131,11 @@ body {
   }
 
   #location-search-large {
-    width: 1140px; /* Adjusted size for the large form */
+    width: 1140px;
   }
   
   #location-search-small {
-    width: 750px; /* Original size retained for the small form */
+    width: 750px;
   }
   
   #location-search-large,
@@ -142,11 +151,6 @@ body {
     outline: none;
     border-radius: 100px;
   }
-    /* #location-search-large:focus {
-        border: 3px solid #333645;
-        transition: 0.2s border;
-    } */
-  
   #submit-button,
   #submit-small {
     cursor: pointer;
@@ -248,13 +252,13 @@ body {
 .day-details {
     display: flex;
     margin-top: 10px;
-    height: 20px;
     gap: 20px;
 }
 
 #umbrella-icon,
 #wind-icon,
 #compass-icon {
+    max-height: 20px;
     display: flex;
 }
 
@@ -318,6 +322,9 @@ body {
     width: 1170px;
     margin: 0 auto;
     padding: 0 15px;
+}
+#live-cameras, a {
+    text-decoration: none;
 }
 
 .section-text {
@@ -491,15 +498,11 @@ body {
 
 .block-element {
     display: grid;
-    /* grid-template-columns: repeat(3, 130px);
-    grid-template-rows: repeat(3, 1fr); */
 }
 
 .block-title-t3 {
-    /* height: 60px; */
     width: 360px;
     font-size: 36px;
-    /* margin-bottom: 10px; */
 }
 
 .main-block-b2 {
@@ -545,7 +548,6 @@ input:-webkit-autofill:active {
 
 /* FOOTER */
 
-
 .footer-big-block {
     background-color: #262936;
     height: auto;
@@ -563,7 +565,6 @@ input:-webkit-autofill:active {
 
 .footer-container {
     display: block;
-    /* padding: 50px 0; */
     padding-top: 50px;
     place-items: center;
 }
@@ -572,7 +573,6 @@ footer {
     color: #bfc1c8;
     display: flex;
     justify-content: center;
-    /* margin: 40px 0px; */
     padding-bottom: 10px;
 }
 
@@ -744,7 +744,7 @@ ul li:nth-child(4) a span::after {
     }
     .nav-bar {
         position: fixed;
-        top: 20px;
+        top: 40px;
         left: -100%;
         width: 100%;
         height: 300px;
@@ -766,9 +766,17 @@ ul li:nth-child(4) a span::after {
         font-size: 20px;
         text-transform: uppercase;
     }
+    .menu-item::before,
+    .menu-item::after {
+        display: none !important;
+    }
 
-
-
+    .menu-item:hover {
+        background-color: transparent !important;
+        border: none !important;
+        color: white !important;
+        transform: none !important;
+    }
 
     .nav-elements{
         width: 100%;
@@ -812,7 +820,6 @@ ul li:nth-child(4) a span::after {
         transform: translateY(-50px) !important;
     }
     .forecast-table-wrapper {
-        /* justify-content: center; */
         display: block !important;
         width: 100%;
         height: 100%;
@@ -847,7 +854,6 @@ ul li:nth-child(4) a span::after {
     }
     #location-search-small {
         width: auto !important;
-        /* position: initial; */
     }
     #submit-button {
         margin: auto;
@@ -884,14 +890,6 @@ ul li:nth-child(4) a span::after {
         width: 100%;
         z-index: 100;
     }
-    .menu-item {
-        height: auto;
-        margin: 0 !important;
-        margin-bottom: 2px !important;
-    }
-    .home {
-        width: auto;
-    }
     .banner {
         padding-left: 10px;
     }
@@ -901,7 +899,6 @@ ul li:nth-child(4) a span::after {
         -webkit-box-shadow: 0 0 0px 1000px rgba(0,0,0,0) inset !important;
     }
     #awsome-photos-image {
-        /* max-height: 73px; */
         max-width: 115px;
     }
     .big-container {
