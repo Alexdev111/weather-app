@@ -10,7 +10,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 [![Open-Meteo](https://img.shields.io/badge/API-Open--Meteo-blue?style=flat-square)](https://open-meteo.com/)
 [![OpenWeatherMap](https://img.shields.io/badge/API-OpenWeatherMap-orange?style=flat-square)](https://openweathermap.org/)
-[![Live Demo](https://img.shields.io/badge/Demo-Live-brightgreen?style=flat-square)](#)
+[![Live Demo](https://img.shields.io/badge/Demo-Live-brightgreen?style=flat-square)](https://weather-newss.vercel.app/)
 
 </div>
 
@@ -26,9 +26,9 @@ WeatherNews is a modern, responsive weather application built with React. Search
 
 > _Add screenshots of your app here by placing images in `/src/images/screenshots/` and linking them below._
 
-| Home / Search                              | Forecast Panel                                     | Mobile View                                    |
-| ------------------------------------------ | -------------------------------------------------- | ---------------------------------------------- |
-| ![Home](./src/images/screenshots/home.png) | ![Forecast](./src/images/screenshots/forecast.png) | ![Mobile](./src/images/screenshots/mobile.png) |
+| Home / Search                              | Forecast Panel                                 | Mobile View                                    |
+| ------------------------------------------ | ---------------------------------------------- | ---------------------------------------------- |
+| ![Home](./src/images/screenshots/home.png) | ![Forecast](./src/images/screenshots/home.png) | ![Mobile](./src/images/screenshots/mobile.png) |
 
 ---
 
@@ -138,6 +138,33 @@ weathernews/
 ```
 
 ---
+
+## How It Works
+
+### Loading Flow
+
+```
+App mounts
+  └─> Loader renders (full-screen)
+  └─> <Forecast> mounts (hidden via CSS)
+        └─> useEffect fires → fetches Open-Meteo API
+              └─> Data resolves → calls onDataLoaded()
+                    └─> App sets loading = false
+                          └─> Loader unmounts, content fades in
+```
+
+This pattern keeps `<Forecast>` mounted during the load so its `useEffect` runs and API calls complete before the UI is shown, avoiding a flash of empty content.
+
+### City Search Flow
+
+```
+User types city name → clicks "Find" (or presses Enter)
+  └─> OpenWeatherMap Geocoding API → returns lat/lon
+        └─> Open-Meteo API called with new coordinates
+              └─> Current weather + 7-day forecast rendered
+```
+
+If the city is not found, a "not found" image replaces the forecast panel and the daily cards are hidden.
 
 ### Weather Code Mapping
 
