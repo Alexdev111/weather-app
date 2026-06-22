@@ -139,33 +139,6 @@ weathernews/
 
 ---
 
-## How It Works
-
-### Loading Flow
-
-```
-App mounts
-  └─> Loader renders (full-screen)
-  └─> <Forecast> mounts (hidden via CSS)
-        └─> useEffect fires → fetches Open-Meteo API
-              └─> Data resolves → calls onDataLoaded()
-                    └─> App sets loading = false
-                          └─> Loader unmounts, content fades in
-```
-
-This pattern keeps `<Forecast>` mounted during the load so its `useEffect` runs and API calls complete before the UI is shown, avoiding a flash of empty content.
-
-### City Search Flow
-
-```
-User types city name → clicks "Find" (or presses Enter)
-  └─> OpenWeatherMap Geocoding API → returns lat/lon
-        └─> Open-Meteo API called with new coordinates
-              └─> Current weather + 7-day forecast rendered
-```
-
-If the city is not found, a "not found" image replaces the forecast panel and the daily cards are hidden.
-
 ### Weather Code Mapping
 
 The app maps WMO weather interpretation codes from Open-Meteo to one of 11 SVG icons:
